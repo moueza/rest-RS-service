@@ -38,3 +38,13 @@ compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servle
     
 }
 
+
+
+
+eclipse {
+    wtp {
+        component {
+            contextPath = 'newName'
+        }
+    }
+}
