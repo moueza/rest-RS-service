@@ -16,3 +16,15 @@ include 'services:webservice'
 */
 
 rootProject.name = 'restRS'
+
+
+
+buildCache {
+  local {
+    enabled = false 
+  }
+  remote(HttpBuildCache) {
+    url = "https://gradle.company.com/cache/" 
+    push = true 
+  }
+}

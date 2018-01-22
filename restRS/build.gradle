@@ -6,6 +6,11 @@
  * user guide available at https://docs.gradle.org/4.3/userguide/java_library_plugin.html
  */
 
+/*FIRST PLUGIN	
+https://guides.gradle.org/creating-build-scans/*/
+plugins {
+    id 'com.gradle.build-scan' version '1.11' 
+}
 // Apply the java-library plugin to add support for Java Library
 //apply plugin: 'java-library'
 
@@ -13,7 +18,10 @@
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
-
+buildScan {
+    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    licenseAgree = 'yes'
+}
 project.webAppDirName = 'WebContent'
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -48,4 +56,9 @@ eclipse {
             contextPath = 'newName'
         }
     }
+    
+    //TODO Dynamic version
+    task wrapper(type: Wrapper) {
+    gradleVersion = '4.4.1'
+}
 }
