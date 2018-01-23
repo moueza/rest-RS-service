@@ -18,10 +18,19 @@ include 'services:webservice'
 rootProject.name = 'restRS'
 
 
-
 buildCache {
+  remote(HttpBuildCache) {
+    url = 'https://i6itqnwmj3koousazwce7bxjda-trial.gradle.com/cache/'
+    push = true
+    credentials {
+      username = 'trial'
+      password = 'ytybvoajh2jtw'
+    }
+  }
+
+
   local {
-    enabled = false 
+    enabled = true 
   }
   remote(HttpBuildCache) {
     url = "https://gradle.company.com/cache/" 

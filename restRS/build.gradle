@@ -21,6 +21,9 @@ apply plugin: 'eclipse-wtp'
 buildScan {
     licenseAgreementUrl = 'https://gradle.com/terms-of-service'
     licenseAgree = 'yes'
+    
+    server = 'https://i6itqnwmj3koousazwce7bxjda-trial.gradle.com'
+  publishAlways()
 }
 project.webAppDirName = 'WebContent'
 // In this section you declare where to find the dependencies of your project
@@ -56,9 +59,9 @@ eclipse {
             contextPath = 'newName'
         }
     }
-    
+    }
+   
     //TODO Dynamic version
     task wrapper(type: Wrapper) {
     gradleVersion = '4.4.1'
-}
 }
